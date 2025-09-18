@@ -1,0 +1,4 @@
+# Add project dependencies for LLM-powered content enrichment
+openai
+requests
+sqlite3
