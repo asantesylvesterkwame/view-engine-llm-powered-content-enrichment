@@ -67,8 +67,13 @@ def query_links_db(db_path='resources/links.db'):
 def call_llm(article, keywords, media_candidates, link_candidates, brand_rules):
     import requests
     import json
-    api_key = "-API-KEY-"
-    
+    import os
+    from dotenv import load_dotenv
+    load_dotenv()
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENROUTER_API_KEY not set in environment or .env file.")
+
     url = "https://openrouter.ai/api/v1/chat/completions"
     prompt = f"""
 You are an expert content editor. Given the following article, media candidates, link candidates, keywords, and brand rules, select:
