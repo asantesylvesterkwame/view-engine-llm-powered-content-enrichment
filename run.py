@@ -67,7 +67,7 @@ def query_links_db(db_path='resources/links.db'):
 def call_llm(article, keywords, media_candidates, link_candidates, brand_rules):
     import requests
     import json
-    api_key = "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"
+    api_key = "-API-KEY-"
     
     url = "https://openrouter.ai/api/v1/chat/completions"
     prompt = f"""
